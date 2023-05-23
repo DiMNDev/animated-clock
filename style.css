@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Orbitron:wght@900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +12,7 @@ html {
 .container {
   width: 100%;
   height: 100vh;
+  background-color: #222;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,11 +21,15 @@ html {
 .clock {
   width: 35rem;
   height: 35rem;
-  background-color: #acacac;
+  background: radial-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2)),
+    url(images/DiMNDev-Profile.png) center no-repeat;
+  background-size: 35rem 35rem;
+  background-position-y: top;
   border-radius: 50%;
   border: 0.5rem solid #777;
   box-shadow: 0.5rem 0.5rem 1rem #555, -0.5rem -0.5rem 1rem #555;
   position: relative;
+  z-index: 2;
 }
 
 .numbers {
@@ -36,7 +40,13 @@ html {
 
 .numbers div {
   position: absolute;
+  display: flex;
+  justify-self: center;
+  align-items: center;
   font-size: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 0.3rem;
   color: #fff;
   text-shadow: 0.2rem 0.2rem 0.2rem #222;
 }
@@ -103,6 +113,40 @@ html {
 }
 
 .arrows .second {
-  background-color: #24cfe6;
+  background-color: maroon;
   transform: rotate(270deg);
+}
+
+.count-container {
+  width: 50rem;
+  height: 10rem;
+  position: absolute;
+  top: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.time-counter {
+  font-family: "Orbitron", serif;
+  font-size: 6rem;
+  color: #eee;
+  /* background-color: #333; */
+  text-shadow: 0 0.1rem 0.3rem #777 inset;
+  top: 70%;
+  z-index: 1;
+}
+
+.string-date {
+  position: absolute;
+  font-size: 10rem;
+  color: #222;
+  /* background-color: #333; */
+  text-shadow: 0 0.1rem 0.3rem #777;
+  box-shadow: 0.5rem 0.5rem 10rem #777 inset;
+  top: 75%;
+  z-index: 1;
+  border-bottom: 1rem solid #333;
+  border-right: 1rem solid #333;
+  border-radius: 2rem;
 }
