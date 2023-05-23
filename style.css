@@ -21,7 +21,7 @@ html {
 .clock {
   width: 35rem;
   height: 35rem;
-  background: radial-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2)),
+  background: radial-gradient(rgba(20, 20, 20, 0.5), rgba(0, 0, 0, 0.2)),
     url(images/DiMNDev-Profile.png) center no-repeat;
   background-size: 35rem 35rem;
   background-position-y: top;
@@ -36,6 +36,7 @@ html {
   width: inherit;
   height: inherit;
   position: relative;
+  font-size: 2.5rem;
 }
 
 .numbers div {
@@ -43,10 +44,11 @@ html {
   display: flex;
   justify-self: center;
   align-items: center;
-  font-size: 2.5rem;
+
   background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20%;
   text-align: center;
-  padding: 0.3rem;
+  padding: 0.5rem;
   color: #fff;
   text-shadow: 0.2rem 0.2rem 0.2rem #222;
 }
@@ -90,9 +92,10 @@ html {
   content: "";
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #fff;
+  background-color: goldenrod;
   border-radius: 50%;
-  box-shadow: 0.2rem 0.2rem 0.5rem #777;
+  box-shadow: -0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.9),
+    0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.7) inset;
   z-index: 10;
 }
 
@@ -102,19 +105,21 @@ html {
   background-color: #fff0f5;
   position: absolute;
   bottom: 50%;
-  box-shadow: 0.2rem 0.2rem 0.5rem #777;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
   border-radius: 100% 100% 0 0;
   transform-origin: bottom center;
 }
 
 .arrows .hour {
   height: 10rem;
-  transform: rotate(90deg);
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 55, 0.2) inset;
+  transform: rotate(0);
 }
 
 .arrows .second {
   background-color: maroon;
-  transform: rotate(270deg);
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(255, 255, 255, 0.2) inset;
+  transform: rotate(0);
 }
 
 .count-container {
@@ -135,6 +140,22 @@ html {
   text-shadow: 0 0.1rem 0.3rem #777 inset;
   top: 70%;
   z-index: 1;
+}
+
+.change.time-counter.second {
+  animation: countAnimation 0.9s forwards;
+}
+
+@keyframes countAnimation {
+  0% {
+    color: #eee;
+  }
+  50% {
+    color: maroon;
+  }
+  100% {
+    color: #eee;
+  }
 }
 
 .string-date {

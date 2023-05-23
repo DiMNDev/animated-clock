@@ -23,7 +23,12 @@ function setDate() {
   const secondChar = document.querySelector(".time-counter.second");
   hourChar.innerHTML = getHours + " :";
   minuteChar.innerHTML = getMinutes + " :";
+
+  if (secondChar.innerHTML !== getSeconds + "") {
+    secondChar.classList.toggle("change");
+  } else {
+    secondChar.classList.toggle("change");
+  }
   secondChar.innerHTML = getSeconds + "";
 }
-
 setInterval(setDate, 1000);
