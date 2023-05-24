@@ -171,3 +171,19 @@ html {
   border-right: 1rem solid #333;
   border-radius: 2rem;
 }
+
+@media (max-width: 800px) {
+  .string-date {
+    position: absolute;
+    font-size: 5rem;
+    color: #222;
+    /* background-color: #333; */
+    text-shadow: 0 0.1rem 0.3rem #777;
+    box-shadow: 0.5rem 0.5rem 10rem #777 inset;
+    top: 75%;
+    z-index: 1;
+    border-bottom: 1rem solid #333;
+    border-right: 1rem solid #333;
+    border-radius: 2rem;
+  }
+}
