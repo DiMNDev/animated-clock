@@ -25,10 +25,18 @@ function setDate() {
   minuteChar.innerHTML = getMinutes + " :";
 
   if (secondChar.innerHTML !== getSeconds + "") {
-    secondChar.classList.toggle("change");
-  } else {
-    secondChar.classList.toggle("change");
+    secondChar.classList.add("change");
   }
-  secondChar.innerHTML = getSeconds + "";
+  const secondAnimation = document.querySelector(".time-counter.second");
+  secondAnimation.addEventListener("animationend", (e) => {
+    e.preventDefault();
+    secondChar.classList.remove("change");
+  });
+
+  if (getSeconds < 10) {
+    secondChar.innerHTML = "0" + getSeconds;
+  } else {
+    secondChar.innerHTML = getSeconds + "";
+  }
 }
 setInterval(setDate, 1000);
